@@ -75,12 +75,8 @@ HW5_MediaPlayer/
 | 循環播放 | 影片結束後自動重新播放 |
 
 ---
-
-## 循環播放修正說明
-
-原本只使用 Windows Media Player 的內建 `setMode("loop", true)`，在部分電腦或部分影片格式上可能不會正常循環。
-
-本版本額外加入 `PlayStateChange` 事件判斷，當播放器狀態變成 `MediaEnded` 時，如果「循環播放」有勾選，就會透過 `Timer` 延遲重新播放，避免影片剛結束時立即呼叫 `play()` 失敗。
+## 執行截圖
+<img width="1067" height="683" alt="image" src="https://github.com/user-attachments/assets/da4f9812-7ede-4a5d-8563-3f8482403bca" />
 
 ---
 
