@@ -61,15 +61,6 @@ HW5_MediaPlayer/
 4. 按下 Visual Studio 上方的「開始」按鈕，或按 `F5` 執行程式。
 5. 程式啟動後會自動載入 `sample_media/Dog.wmv`，按下「播放」即可播放。
 
-### 方法二：從 GitHub 下載後執行
-
-1. 進入本專案 GitHub repository。
-2. 點選 `Code`。
-3. 選擇 `Download ZIP`。
-4. 解壓縮下載的 ZIP 檔。
-5. 使用 Visual Studio 開啟 `HW5_MediaPlayer.sln`。
-6. 按下 `F5` 執行程式。
-
 ---
 
 ## 操作說明
@@ -93,22 +84,3 @@ HW5_MediaPlayer/
 
 ---
 
-## GitHub 上傳注意事項
-
-應上傳原始碼、方案檔、專案檔、README、`.gitignore` 與必要影片資源，不應上傳 Visual Studio 產生的編譯檔或暫存檔。
-
-### 不應上傳的內容
-
-```text
-.vs/
-bin/
-obj/
-Debug/
-Release/
-*.exe
-*.dll
-*.pdb
-*.user
-*.suo
-*.zip
-```
