@@ -53,7 +53,7 @@ HW5_MediaPlayer/
 
 ## 執行說明
 
-### 方法一：使用 Visual Studio 執行
+### 使用 Visual Studio 執行
 
 1. 下載或 clone 本專案到電腦。
 2. 使用 Visual Studio 開啟 `HW5_MediaPlayer.sln`。
