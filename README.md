@@ -1,0 +1,114 @@
+# HW5_MediaPlayer
+
+## 專案簡介
+
+`HW5_MediaPlayer` 是一個使用 **C# Windows Forms** 製作的多媒體播放器。程式使用 Windows Media Player ActiveX 控制項播放影片，支援瀏覽檔案、播放、暫停、停止、播放倍速與循環播放功能。
+
+本版本已內建老師提供的 `Dog.wmv`，程式啟動後會自動載入預設影片並停在開頭，按下「播放」即可開始播放。
+
+---
+
+## 功能特色
+
+- 可播放 WMV、MP4、AVI 等影片檔
+- 內建預設影片 `sample_media/Dog.wmv`
+- 支援播放、暫停、停止
+- 支援播放倍速：0.5x、1.0x、1.5x、2.0x
+- 支援循環播放
+- 使用 `AxWindowsMediaPlayer` 作為影片播放元件
+- 已加入循環播放補強機制，影片結束後會自動回到開頭重播
+
+---
+
+## 開發環境
+
+| 項目 | 內容 |
+|---|---|
+| 開發工具 | Visual Studio |
+| 程式語言 | C# |
+| 專案類型 | Windows Forms App |
+| 目標框架 | .NET Framework 4.7.2 |
+| 播放元件 | Windows Media Player ActiveX |
+| 作業系統 | Windows |
+
+---
+
+## 專案結構
+
+```text
+HW5_MediaPlayer/
+├── HW5_MediaPlayer.sln
+├── HW5_MediaPlayer.csproj
+├── Program.cs
+├── frmMediaPlayer.cs
+├── Properties/
+│   └── AssemblyInfo.cs
+├── sample_media/
+│   └── Dog.wmv
+├── .gitignore
+└── README.md
+```
+
+---
+
+## 執行說明
+
+### 方法一：使用 Visual Studio 執行
+
+1. 下載或 clone 本專案到電腦。
+2. 使用 Visual Studio 開啟 `HW5_MediaPlayer.sln`。
+3. 確認上方執行設定為 `Debug / Any CPU`。
+4. 按下 Visual Studio 上方的「開始」按鈕，或按 `F5` 執行程式。
+5. 程式啟動後會自動載入 `sample_media/Dog.wmv`，按下「播放」即可播放。
+
+### 方法二：從 GitHub 下載後執行
+
+1. 進入本專案 GitHub repository。
+2. 點選 `Code`。
+3. 選擇 `Download ZIP`。
+4. 解壓縮下載的 ZIP 檔。
+5. 使用 Visual Studio 開啟 `HW5_MediaPlayer.sln`。
+6. 按下 `F5` 執行程式。
+
+---
+
+## 操作說明
+
+| 按鈕 / 選項 | 功能 |
+|---|---|
+| 瀏覽 | 選擇要播放的影片檔 |
+| 播放 | 播放目前載入的影片 |
+| 暫停 | 暫停目前播放中的影片 |
+| 停止 | 停止播放並回到停止狀態 |
+| 播放倍速 | 調整影片播放速度 |
+| 循環播放 | 影片結束後自動重新播放 |
+
+---
+
+## 循環播放修正說明
+
+原本只使用 Windows Media Player 的內建 `setMode("loop", true)`，在部分電腦或部分影片格式上可能不會正常循環。
+
+本版本額外加入 `PlayStateChange` 事件判斷，當播放器狀態變成 `MediaEnded` 時，如果「循環播放」有勾選，就會透過 `Timer` 延遲重新播放，避免影片剛結束時立即呼叫 `play()` 失敗。
+
+---
+
+## GitHub 上傳注意事項
+
+應上傳原始碼、方案檔、專案檔、README、`.gitignore` 與必要影片資源，不應上傳 Visual Studio 產生的編譯檔或暫存檔。
+
+### 不應上傳的內容
+
+```text
+.vs/
+bin/
+obj/
+Debug/
+Release/
+*.exe
+*.dll
+*.pdb
+*.user
+*.suo
+*.zip
+```
